@@ -1,0 +1,6 @@
+/* _content/Net_Core_API/Views/Shared/_Layout.cshtml.rz.scp.css */
+<form asp-actions="Demo">
+    <input type="text" name="FullName" />
+    <input type="submit" value="Guidulieu" />
+</form>
+<h2>@ViewBag.thongBao</h2[b-8j958yn124]>

@@ -5,11 +5,11 @@ using Net_Core_API.Models;
 
 namespace Net_Core_API.Controllers;
 
-public class HomeController : Controller
+public class StudentController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly ILogger<StudentController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public StudentController(ILogger<StudentController> logger)
     {
         _logger = logger;
     }
@@ -30,9 +30,9 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
     [HttpPost]
-    public IActionResult Index(string FullName , String ID ,String Age)
+    public IActionResult Index(string FullName , String ID ,String Age,string Address)
     {
-        string strOutput = "xin chào  " + ID + "-" +FullName +"-" + Age;
+        string strOutput = "xin chào  " + ID + "-" +FullName +"-" + Age + "-" + Address;
         ViewBag.Message = strOutput;
         return View();
     }
