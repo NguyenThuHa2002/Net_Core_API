@@ -1,17 +1,41 @@
+@model IEnumerable<Net_Core_API.Models.Student>
 
 @{
-    
-    <form asp-action ="index" >
-    <label for="id"> Nhập id </label>
-    <input Type="text" name="ID" >
-    <label for="name"> Nhập tên</label>
-     <input Type="text" name="FullName" >
-    <label for="name"> Nhập tuổi</label>
-     <input Type="text" name="Age" >
-    <label for="name"> Nhập diachi</label>
-     <input Type="text" name="Address" >
-     <input type="submit" value ="gửi dữ liệu ">
-     </form>
+    ViewData["Title"] = "Index";
 }
-<h1>@ViewData["Title"]</h1>
-<h1>@ViewBag.Message</h1>
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.StudentId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.StudentId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.StudentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

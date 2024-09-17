@@ -29,11 +29,4 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-    [HttpPost]
-    public IActionResult Index(string FullName , String ID ,String Age)
-    {
-        string strOutput = "xin chào  " + ID + "-" +FullName +"-" + Age;
-        ViewBag.Message = strOutput;
-        return View();
-    }
 }

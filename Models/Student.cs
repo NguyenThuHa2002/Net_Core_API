@@ -1,11 +1,17 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Net_Core_API.Models;
+
+[Table("Students")]
 
 public class Student
 {
-    public string? ID { get; set; }
+    [Key]
+    public string? StudentId { get; set; }
 
-    public string? Fullname { get; set; }
-    public string? Age { get; set; }
+    public string? FullName { get; set; }
+  
     public string? Address { get; set; }
 }
+
