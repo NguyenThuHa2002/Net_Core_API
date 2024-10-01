@@ -8,6 +8,8 @@ namespace Net_Core_API.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {}
         public DbSet<Student> Student { get ; set;}
+        public DbSet<Person> Person { get ; set;}
+        public DbSet<Employee> Employee { get ; set;}
         
     }
 }
